@@ -1,10 +1,15 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
+import Slides from "../components/Slides";
+import { SLIDES_DATA } from "../constant";
 
-export default () => {
+export default ({ navigation }) => {
+  const onSlideComplete = () => {
+    navigation.navigate("Auth");
+  };
   return (
     <View>
-      <Text>Welcome Screen</Text>
+      <Slides slideData={SLIDES_DATA} onComplete={onSlideComplete} />
     </View>
   );
 };
